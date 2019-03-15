@@ -16,7 +16,8 @@ INSERT INTO Tienda VALUES (12,'jeans',21,32,'negro','Unica');
 INSERT INTO Tienda VALUES (13,'Camiseta',15,5,'negro','M'); 
 INSERT INTO Tienda VALUES (14,'Correa',17,7,'negro','M');   
 SELECT * FROM Tienda;
-SELECT SUM (quantity) FROM Tienda;
-SELECT Min(valor)FROM Tienda; 
-SELECT MAX (quantity) FROM Tienda;
-SELECT COUNT(id) FROM Tienda;
+SELECT valor, SUM(quantity) as 'Cantidad de total de prendas'FROM Tienda GROUP BY valor;
+
+SELECT Min(valor)as 'Precio mas bajo' FROM Tienda; 
+SELECT MAX (quantity) as 'Prenda en mayor cantidad' FROM Tienda
+SELECT COUNT(id) as 'Cantidad de articulos'FROM Tienda;
